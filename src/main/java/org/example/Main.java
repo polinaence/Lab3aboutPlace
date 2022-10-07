@@ -36,6 +36,9 @@ public class Main {
 
         var getWeather = new GetWeather(Lat,Lon);
         getWeather.getWResponse();
+
+        var getIntPlace = new GetIntPlace(Lat,Lon);
+        getIntPlace.getIResponse();
         sleep(20000);
 
 
