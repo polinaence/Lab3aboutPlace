@@ -1,4 +1,4 @@
-package org.example.forJson;
+package org.example.forJson.placeFirstUtil;
 
 public class PlaceLatLng{
     public PlaceLatLng(){

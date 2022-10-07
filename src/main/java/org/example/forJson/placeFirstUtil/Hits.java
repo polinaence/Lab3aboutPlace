@@ -1,4 +1,4 @@
-package org.example.forJson;
+package org.example.forJson.placeFirstUtil;
 
 import java.util.ArrayList;
 
@@ -13,9 +13,6 @@ public class Hits {
     public void setHits(ArrayList<PlaceWords> hits) {
         this.hits = hits;
     }
-
-    //получение индекса
-
 
     public Hits(){
 

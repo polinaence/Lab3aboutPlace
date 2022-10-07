@@ -1,7 +1,7 @@
 package org.example;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
-import org.example.forJson.PlaceWords;
+import org.example.forJson.placeFirstUtil.PlaceWords;
 
 
 import java.io.IOException;
@@ -25,6 +25,8 @@ public class GetCords {
 
     }
 
+    public ArrayList<PlaceWords> hits = new ArrayList<>();
+
     public CompletableFuture<Void> getResponse() throws IOException, URISyntaxException {
         var client = HttpClient.newHttpClient();
         HttpRequest request = newBuilder()
@@ -40,13 +42,13 @@ public class GetCords {
                 .sendAsync(request, HttpResponse.BodyHandlers.ofString())
                 .thenApply(HttpResponse::body).thenApply(placeStr -> {
                     try {
-                        return CustomParser.PlacePars(placeStr);
+                        return CustomParserPlace.PlacePars(placeStr);
                     } catch (JsonProcessingException e) {
                         throw new RuntimeException(e);
                     }
                 })
                 .thenAccept(body -> {
-                    ArrayList<PlaceWords> hits = body.getHits();
+                    hits = body.getHits();
                     for (int i = 0; i < hits.size(); i++) {
                         var hit = hits.get(i);
                         System.out.println((i + 1) + ". " + hit.getName() + " " + hit.getCountry() + " " + hit.getCity());
