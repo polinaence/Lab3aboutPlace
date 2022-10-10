@@ -1,9 +1,10 @@
 package org.example.forJson.weatherUtil;
 
 public class PlaceWeather {
-    public PlaceWeather(){
+    public PlaceWeather() {
 
     }
+
     private String main;
     private String description;
 

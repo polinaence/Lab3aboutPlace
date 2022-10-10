@@ -1,6 +1,7 @@
-package org.example;
+package org.example.getters;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
+import org.example.forJson.parser.CustomParserPlace;
 import org.example.forJson.placeFirstUtil.PlaceWords;
 
 
@@ -16,6 +17,8 @@ import java.util.concurrent.CompletableFuture;
 import static java.net.http.HttpRequest.newBuilder;
 
 public class GetCords {
+    public static final String ANSI_RED = "\u001B[31m";
+    public static final String ANSI_RESET = "\u001B[0m";
     private static final String Key = "0453f1cf-d1f0-40a4-b6a0-e4fb6fc39799";
 
     private final String location;
@@ -34,8 +37,8 @@ public class GetCords {
                         "&key=" + Key))
                 .GET()
                 .build();
-        System.out.println("https://graphhopper.com/api/1/geocode?q=" + this.location +
-                "&key=" + Key);
+        //System.out.println("https://graphhopper.com/api/1/geocode?q=" + this.location +
+         //       "&key=" + Key);
         //////////////////////////////////////////////
         return HttpClient.newBuilder()
                 .build()
@@ -51,7 +54,9 @@ public class GetCords {
                     hits = body.getHits();
                     for (int i = 0; i < hits.size(); i++) {
                         var hit = hits.get(i);
-                        System.out.println((i + 1) + ". " + hit.getName() + " " + hit.getCountry() + " " + hit.getCity());
+                        System.out.println((i + 1) + ANSI_RED + ". name: " + ANSI_RESET + hit.getName()+
+                                ANSI_RED + " country:  " + ANSI_RESET + hit.getCountry() +
+                                ANSI_RED + " city:  " + ANSI_RESET + hit.getCity());
                     }
                 })
                 ;

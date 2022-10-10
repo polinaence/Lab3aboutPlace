@@ -1,7 +1,7 @@
 package org.example.forJson.placeFirstUtil;
 
-public class PlaceLatLng{
-    public PlaceLatLng(){
+public class PlaceLatLng {
+    public PlaceLatLng() {
 
     }
 

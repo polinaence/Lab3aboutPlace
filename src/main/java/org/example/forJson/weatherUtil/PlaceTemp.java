@@ -4,7 +4,7 @@ public class PlaceTemp {
     private Integer temp;
     private Integer feels_like;
 
-    public PlaceTemp(){
+    public PlaceTemp() {
 
     }
 

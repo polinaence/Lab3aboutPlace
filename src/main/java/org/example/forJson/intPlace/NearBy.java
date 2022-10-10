@@ -1,8 +1,5 @@
 package org.example.forJson.intPlace;
 
-import org.example.forJson.placeFirstUtil.PlaceWords;
-
-import java.util.ArrayList;
 
 public class NearBy {
     private String name;

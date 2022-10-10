@@ -3,9 +3,9 @@ package org.example.forJson.weatherUtil;
 import java.util.List;
 
 public class Weather {
-    private  List<PlaceWeather> weather;
+    private List<PlaceWeather> weather;
 
-    public  List<PlaceWeather> getWeather() {
+    public List<PlaceWeather> getWeather() {
         return weather;
     }
 
@@ -13,7 +13,7 @@ public class Weather {
         this.weather = weather;
     }
 
-    public Weather(){
+    public Weather() {
 
     }
 

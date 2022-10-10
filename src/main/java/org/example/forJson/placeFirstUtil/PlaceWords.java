@@ -5,9 +5,10 @@ import org.example.forJson.placeFirstUtil.PlaceLatLng;
 public class PlaceWords {
 
 
-    public PlaceWords(){
+    public PlaceWords() {
 
     }
+
     private String country;
 
     public PlaceLatLng getPoint() {
