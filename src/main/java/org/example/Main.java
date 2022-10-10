@@ -28,7 +28,7 @@ public class Main {
             var getCords = new GetCords(location);
             getCords.getResponse().join();
             if (getCords.hits.size() == 0) {
-                System.out.println("Пожалуйста не пиши так");
+                System.out.println("Пожалуйста не пиши так :-( ");
                 continue;
             }
 
